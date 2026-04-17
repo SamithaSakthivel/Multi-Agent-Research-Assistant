@@ -6,7 +6,7 @@ import ResultPanel from './components/ResultPanel'
 import HistoryPanel from './components/HistoryPanel'
 import './App.css'
 
-const API_BASE = '/api'
+const API_BASE = `${import.meta.env.VITE_BACKEND_URL}/api`
 
 export default function App() {
   const [query, setQuery] = useState('')
