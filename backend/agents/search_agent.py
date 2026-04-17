@@ -1,6 +1,6 @@
 import os
 from typing import List
-from tavily import TavilyClient  # Make sure you use the Async version
+from tavily import AsyncTavilyClient  # 1. Use the Async Client
 from models.schemas import Source
 
 class SearchAgent:
@@ -8,11 +8,11 @@ class SearchAgent:
         api_key = os.getenv("TAVILY_API_KEY")
         if not api_key:
             raise ValueError("TAVILY_API_KEY is not set in environment.")
-        # Use the Async client here
-        self.client = TavilyClient(api_key=api_key)
+        # 2. Initialize with Async version
+        self.client = AsyncTavilyClient(api_key=api_key)
 
-    async def run(self, query: str, max_results: int = 3) -> List[Source]:
-        # Now 'await' will work correctly with the Async client
+    async def run(self, query: str, max_results: int = 3) -> List[Source]: # 3. Keep 'async'
+        # 4. Use 'await' here. This works because client is AsyncTavilyClient
         response = await self.client.search(
             query=query,
             search_depth="basic",
