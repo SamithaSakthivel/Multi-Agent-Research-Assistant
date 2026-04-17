@@ -1,0 +1,20 @@
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+python-socketio==5.11.2
+python-dotenv==1.0.1
+
+# LangChain stack
+langchain==0.2.16
+langchain-openai==0.1.25
+langchain-groq==0.1.9
+langgraph==0.2.4
+
+# Search
+tavily-python==0.3.3
+
+# Database
+motor==3.4.0
+redis[asyncio]==5.0.4
+
+# Pydantic
+pydantic>=2.7.4
